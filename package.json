@@ -1,0 +1,69 @@
+{
+  "name": "passpo_hbs_v3",
+  "version": "1.0.0",
+  "description": "its sociallogin hbs app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "async": "^2.6.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.16.1",
+    "cheerio": "^1.0.0-rc.2",
+    "chokidar": "^2.0.1",
+    "compression": "^1.7.2",
+    "connect-ensure-login": "^0.1.1",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^2.0.1",
+    "cookie-parser": "^1.4.3",
+    "csurf": "^1.9.0",
+    "debug": "^2.6.1",
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.7",
+    "ejs-lint": "^0.3.0",
+    "express": "^4.16.1",
+    "express-fileupload": "^0.4.0",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.11.3",
+    "handlebars": "^4.0.11",
+    "helmet": "^3.12.0",
+    "jsonwebtoken": "^8.1.0",
+    "lodash": "^4.17.5",
+    "md5": "^2.2.1",
+    "mongodb": "2.2.33",
+    "mongoose": "^4.13.9",
+    "morgan": "^1.9.0",
+    "mv": "^2.1.1",
+    "n": "^2.1.8",
+    "passport": "^0.3.0",
+    "passport-auth0": "^0.6.0",
+    "passport-facebook": "^2.1.1",
+    "passport-google-oauth": "^1.0.0",
+    "passport-google-oauth1": "^1.0.0",
+    "passport-google-oauth20": "^1.0.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "paypal-rest-sdk": "^1.8.1",
+    "random-number": "0.0.9",
+    "randomcolor": "^0.5.3",
+    "request": "^2.83.0",
+    "serve-favicon": "^2.4.0",
+    "socket.io": "^2.0.4",
+    "stripe": "^5.8.0",
+    "webrtc.io": "0.0.4",
+    "youtube-search": "^1.0.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monukanyal/passpo_hbs_v3.git"
+  },
+  "keywords": [
+    "passport"
+  ],
+  "author": "monu kanyal",
+  "license": "ISC",
+  "engines": {
+    "node": "6.0.0"
+  }
+}

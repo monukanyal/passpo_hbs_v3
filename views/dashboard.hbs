@@ -1,0 +1,193 @@
+
+<div class="col-md-1 custom_overview">
+  <p style="font-size: 15px;color:black">Dashboard</p>
+  <h2>News:</h2>
+</div>
+<div class="col-md-7 custom_overview">
+
+ <marquee direction="left" style="padding:1%;margin-top: 4%;"> 
+  {{#each newsdata}}
+        <strong style="padding-right: 12px;color:#ffffff;font-family: 'Roboto Slab', serif;font-size: 15px">
+         {{this.desc}}
+       </strong>
+  {{/each}}
+ </marquee>
+</div>
+<div class="col-md-4 custom_overview">
+	<div class="" style="margin-top: 6%;min-height: 200px">
+       <!-- Top Info -->
+        <div id="title">
+          <span id="track"></span>
+          <div id="timer">0:00</div>
+          <div id="duration">0:00</div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controlsOuter">
+          <div class="controlsInner">
+            <div id="loading"></div>
+            <div class="btn" id="playBtn"></div>
+            <div class="btn" id="pauseBtn"></div>
+            <div class="btn" id="prevBtn"></div>
+            <div class="btn" id="nextBtn"></div>
+          </div>
+          <!-- <div class="btn" id="playlistBtn"></div> -->
+          <!-- <div class="btn" id="volumeBtn"></div> -->
+        </div>
+        <div id="progress"></div>
+       <!--  <div id="list" style="min-height: 80%;overflow-y: auto;"></div> -->
+    </div>
+</div>
+
+	<div class="">
+    <div id="preloader"></div>
+		<div class="col-md-8">
+	
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            
+                <div class="input-group">
+                  <input type="text" class="form-control searchterm" placeholder="Search" value="salman khan song">
+                  <div class="input-group-btn">
+                    <button class="btn btn-primary searchbtn" type="button">
+                      <i class="glyphicon glyphicon-search">Search</i>
+                    </button>
+                  </div>
+                </div>
+            
+          </div>
+          <div class="panel-body" style="min-height: 200px;">
+          
+              <div class="row datashow">
+                </div>  
+          </div>
+        </div>
+		</div>
+	
+		<div class="col-md-4">
+      <h2>Song List</h2>
+      <p style="font-size: 13px;">Type something in the input field to search the list for specific song:</p>
+      <input class="form-control" id="myInput2" type="text" placeholder="Search.." value="">
+      <br>
+      <ul class="list-group" id="list"></ul>
+      </div>
+       
+
+  <div class="col-md-12">
+    <h2>News Summary</h2>
+    <div class="direction-reveal direction-reveal--3-grid-flexbox direction-reveal--demo-swing">
+      {{#each newsdata}}
+        <a href="#" class="direction-reveal__card">
+          <img src="static/blur.jpg" style="height:100%;width:100%" alt="Image" class="img-fluid">
+          <div class="direction-reveal__overlay direction-reveal__anim--in">
+            <h3 class="direction-reveal__title">Description</h3>
+            <p class="direction-reveal__text">
+                {{this.desc}}
+             </p>
+          </div>
+        </a>
+        {{/each}}
+
+          </div>
+      </div>
+        <!--chat start-->
+      <div class="row chat-window col-xs-5 col-md-3" id="chat_window_1" style="margin-left:75%;">
+        <div class="col-xs-12 col-md-12">
+          <div class="panel panel-default">
+                <div class="panel-heading top-bar">
+                    <div class="col-md-8 col-xs-8">
+                        <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span> Chat @mk</h3>
+                    </div>
+                    <div class="col-md-4 col-xs-4" style="text-align: right;">
+                      <a href="#"><span id="minim_chat_window" class="glyphicon glyphicon-minus icon_minim"></span></a>
+                      <!--   <a href="#"><span class="glyphicon glyphicon-remove icon_close" data-id="chat_window_1"></span></a> -->
+                    </div>
+                </div>
+                <div class="panel-body msg_container_base">
+                    <div class="row msg_container base_sent">
+                        <div class="col-md-10 col-xs-10">
+                            <div class="messages msg_sent">
+                                <p>that mongodb thing looks good, huh?
+                                tiny master db, and huge document store</p>
+                                <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-xs-2 avatar">
+                            <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
+                        </div>
+                    </div>
+                    <div class="row msg_container base_receive">
+                        <div class="col-md-2 col-xs-2 avatar">
+                            <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
+                        </div>
+                        <div class="col-md-10 col-xs-10">
+                            <div class="messages msg_receive">
+                                <p>that mongodb thing looks good, huh?
+                                tiny master db, and huge document store</p>
+                                <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row msg_container base_receive">
+                        <div class="col-md-2 col-xs-2 avatar">
+                            <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
+                        </div>
+                        <div class="col-xs-10 col-md-10">
+                            <div class="messages msg_receive">
+                                <p>that mongodb thing looks good, huh?
+                                tiny master db, and huge document store</p>
+                                <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row msg_container base_sent">
+                        <div class="col-xs-10 col-md-10">
+                            <div class="messages msg_sent">
+                                <p>that mongodb thing looks good, huh?
+                                tiny master db, and huge document store</p>
+                                <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-xs-2 avatar">
+                            <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
+                        </div>
+                    </div>
+                    <div class="row msg_container base_receive">
+                        <div class="col-md-2 col-xs-2 avatar">
+                            <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
+                        </div>
+                        <div class="col-xs-10 col-md-10">
+                            <div class="messages msg_receive">
+                                <p>that mongodb thing looks good, huh?
+                                tiny master db, and huge document store</p>
+                                <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row msg_container base_sent">
+                        <div class="col-md-10 col-xs-10 ">
+                            <div class="messages msg_sent">
+                                <p>that mongodb thing looks good, huh?
+                                tiny master db, and huge document store</p>
+                                <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-xs-2 avatar">
+                            <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="input-group">
+                        <input id="btn-input" type="text" class="form-control input-sm chat_input" placeholder="Write your message here..." />
+                        <span class="input-group-btn">
+                        <button class="btn btn-primary btn-sm" id="btn-chat">Send</button>
+                        </span>
+                    </div>
+                </div>
+        </div>
+        </div>
+    </div>
+     <!--chat end-->
+</div>
+

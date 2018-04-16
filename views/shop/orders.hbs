@@ -1,0 +1,59 @@
+ <button onclick="topFunction()" id="myBtn" title="Go to top" width="35px" height="35px" align="right">⇑</button>
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded" id="nav-main">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#" style="padding-left: 12vw; font-size: 30px;">@mkshop</a>
+        <div class="collapse navbar-collapse" id="navbarNav" style="padding-left: 33vw;" >
+          <ul class="navbar-nav nav-ul">
+              <li class="nav-item" >
+                <a class="nav-link" href="#">Products <span class="sr-only">(current)</span></a>
+              </li> 
+            <li class="nav-item">
+                <a class="nav-link" href="#cartmain" data-toggle="modal" data-target="#myModal"><i class="fa fa-shopping-cart" style="font-size:36px"></i> <span class="badge" style="font-size: 14px;
+    background: #696969;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;"></span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+            </li>
+            
+              <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn"><i class="fa fa-user" aria-hidden="true"></i>{{ Name }}</button>
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="/dashboard/orders">My Transaction</a>
+                  <a href="/logout">Logout<i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                </div>
+          </div>
+          </ul>
+        </div>
+    </nav>
+  <div class="container-fluid" id="maincontainer">
+  <h2>My Transactions</h2>
+  <p>Table-It will show Transaction with status</p>            
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Order id</th>
+        <th>Transaction id</th>
+        <th>status</th>
+        <th>Created At</th>
+      </tr>
+    </thead>
+    <tbody>
+    {{#each data}}
+      <tr>
+        <td>{{i}}</td>
+        <td>{{this.Transaction_id}}</td>
+        <td>{{this.state}}</td>
+        <td>{{this.createdAt}}</td>
+      </tr>
+     {{/each}}
+    </tbody>
+  </table>
+</div>
+
+
+ 
