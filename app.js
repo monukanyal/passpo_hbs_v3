@@ -2,17 +2,15 @@ const express = require('express');
 var app = express();
 const path = require('path');
 const md5=require('md5');
-var mv = require('mv');  //its for chokidar
+const mv = require('mv');  //its for chokidar
 //var morgan = require('morgan'); //http request logger
 const flash = require('connect-flash');
-var mongoose=require('mongoose');
- var chokidar = require('chokidar');
-var sysPath = require('path');
+const mongoose=require('mongoose');
+const chokidar = require('chokidar');
 const fileUpload = require('express-fileupload');
-var Song=require('./Models/Songs.js'); //including model
-var exphbs  = require('express-handlebars');
+const Song=require('./Models/Songs.js'); //including model
+const exphbs  = require('express-handlebars');
 app.engine('hbs', exphbs({extname:'hbs',defaultLayout: 'layout1',layoutsDir:__dirname+'/views/layouts', helpers:{
-    // Function to do basic mathematical operation in handlebar
     math: function(lvalue, operator, rvalue) {lvalue = parseFloat(lvalue);
         rvalue = parseFloat(rvalue);
         return {
@@ -23,8 +21,8 @@ app.engine('hbs', exphbs({extname:'hbs',defaultLayout: 'layout1',layoutsDir:__di
             "%": lvalue % rvalue
         }[operator];
     }
-
   }}));
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
@@ -251,7 +249,7 @@ app.use('/books', Book);
 
 /*--chokiii---*/
 //var paths="/Users/macmini/Downloads/alldownloads"  //mac
-var paths="/home/ip-d/Downloads/alldownloads"  //ubuntu
+/*var paths="/home/ip-d/Downloads/alldownloads"  //ubuntu
 var j=0;
 chokidar.watch(paths, {usePolling: true,
   interval: 100,
@@ -303,7 +301,7 @@ chokidar.watch(paths, {usePolling: true,
      
         // }
    }
-});
+});*/
   /*---chokiii end--*/
 
 /*io.on('connection', function(socket){

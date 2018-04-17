@@ -26,6 +26,7 @@
     "express-fileupload": "^0.4.0",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.11.3",
+    "express-validator": "^5.1.2",
     "handlebars": "^4.0.11",
     "helmet": "^3.12.0",
     "jsonwebtoken": "^8.1.0",
@@ -45,13 +46,10 @@
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
     "paypal-rest-sdk": "^1.8.1",
-    "random-number": "0.0.9",
-    "randomcolor": "^0.5.3",
     "request": "^2.83.0",
     "serve-favicon": "^2.4.0",
     "socket.io": "^2.0.4",
     "stripe": "^5.8.0",
-    "webrtc.io": "0.0.4",
     "youtube-search": "^1.0.10"
   },
   "repository": {

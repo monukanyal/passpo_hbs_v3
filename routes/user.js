@@ -256,4 +256,9 @@ router.post('/charge',function(req,res){
 });
 
 /*--stripe end ---*/
+
+/* bit pay redirect url */
+router.get('/success_pay',function(req,res){
+	res.send(req.body);
+});
 module.exports = router;
