@@ -8,7 +8,8 @@ const flash = require('connect-flash');
 const mongoose=require('mongoose');
 const chokidar = require('chokidar');
 const fileUpload = require('express-fileupload');
-const Song=require('./Models/Songs.js'); //including model
+//const Song=require('./Models/Songs.js'); //including model
+var compression = require('compression');
 const exphbs  = require('express-handlebars');
 app.engine('hbs', exphbs({extname:'hbs',defaultLayout: 'layout1',layoutsDir:__dirname+'/views/layouts', helpers:{
     math: function(lvalue, operator, rvalue) {lvalue = parseFloat(lvalue);
@@ -204,12 +205,58 @@ passport.deserializeUser(function(user, done) {
   done(null, user);
 });
 
+
+LineStrategy = require('passport-line').Strategy;
+passport.use(new LineStrategy({
+    channelID:"1574984661",
+    channelSecret:"6774f29a866088ed14210becd49d3cfd",
+    callbackURL: "http://localhost:8080/auth/line/callback"
+  },
+  function(accessToken, refreshToken, profile, done) {
+     
+    var query=User.findOne({ email:profile.id });
+     query.exec().then((userdata)=>{
+
+      if (!userdata) {
+          var newUser=new User();
+          newUser.Name=profile.displayName;
+          newUser.email=profile.id;
+          newUser.password='';
+          newUser.logintype='line';
+          newUser.save().then((results)=>{
+              return done(null, results);
+          }).catch((err)=>{
+            res.status(400).json({ error: err });
+          });
+      }
+      else
+      {
+        return done(null, userdata);
+      }
+       
+  }).catch((err)=>{
+      return done(null,null);
+  });
+
+  }
+));
+
+// you can use this section to keep a smaller payload
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function(user, done) {
+  done(null, user);
+});
+
 /*------------passport strategy end--------------------------*/
 
 // view engine setup
 // app.set('views', path.join(__dirname, 'views'));
 // app.set('view engine', 'ejs');
 // uncomment after placing your favicon in /public
+app.use(compression()); //use compression 
 app.use(favicon(path.join(__dirname, 'public', 'fav.png')));
 app.use(fileUpload());
 

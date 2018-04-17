@@ -43,6 +43,7 @@
     "passport-google-oauth": "^1.0.0",
     "passport-google-oauth1": "^1.0.0",
     "passport-google-oauth20": "^1.0.0",
+    "passport-line": "0.0.3",
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
     "paypal-rest-sdk": "^1.8.1",

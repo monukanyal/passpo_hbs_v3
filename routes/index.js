@@ -39,7 +39,8 @@ router.get('/auth/google/callback',
 router.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email'] }));
 router.get('/auth/facebook/callback',passport.authenticate('facebook', { successRedirect: '/dashboard', failureRedirect: '/', failureFlash: 'Something is wrong',successFlash: 'Welcome!'  }));
 
-
+router.get('/auth/line',passport.authenticate('line'));
+router.get('/auth/line/callback', passport.authenticate('line', { failureRedirect: '/', successRedirect : '/dashboard',failureFlash: 'Something is wrong line',successFlash: 'Welcome Line user!' }));
 
 //for api
 router.post('/apilogin',function(req,res){
