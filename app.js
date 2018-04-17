@@ -41,14 +41,14 @@ var http=require('http').Server(app);
 var io=require('socket.io')(http);
        http.listen(port);
 
-var rn = require('random-number');
-var gen = rn.generator({
-  min:  0
-, max:  100
-, integer: true
-})
+// var rn = require('random-number');
+// var gen = rn.generator({
+//   min:  0
+// , max:  100
+// , integer: true
+// })
+// var randomColor = require('randomcolor'); // import the script 
 
-var randomColor = require('randomcolor'); // import the script 
 const favicon = require('serve-favicon');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
